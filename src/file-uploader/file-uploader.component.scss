@@ -1,0 +1,79 @@
+.upload-wrapper {
+  font-family: Arial;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 0.9375rem;
+  height: 6.125rem;
+  width: 24.45rem;
+  background-image: repeating-linear-gradient(
+      -10deg,
+      #cccccc,
+      #cccccc 8px,
+      transparent 8px,
+      transparent 16px,
+      #cccccc 16px
+    ),
+    repeating-linear-gradient(
+      80deg,
+      #cccccc,
+      #cccccc 8px,
+      transparent 8px,
+      transparent 16px,
+      #cccccc 16px
+    ),
+    repeating-linear-gradient(
+      170deg,
+      #cccccc,
+      #cccccc 8px,
+      transparent 8px,
+      transparent 16px,
+      #cccccc 16px
+    ),
+    repeating-linear-gradient(
+      260deg,
+      #cccccc,
+      #cccccc 8px,
+      transparent 8px,
+      transparent 16px,
+      #cccccc 16px
+    );
+  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+}
+
+::ng-deep .ngx-file-drop__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .options {
+    color: black;
+    font-size: 0.75rem;
+  }
+
+  .icon {
+    background: none;
+    border: none;
+    color: gray;
+  }
+
+  .upload-text {
+    color: var(--text-default);
+  }
+
+  .upload-button {
+    padding: 0;
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 0.75rem;
+  }
+
+  .file-format {
+    font-size: 0.75rem;
+    color: gray;
+  }
+}
