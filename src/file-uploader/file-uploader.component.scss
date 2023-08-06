@@ -1,79 +1,60 @@
-.upload-wrapper {
-  font-family: Arial;
-  position: relative;
-  z-index: 10;
-  margin-bottom: 0.9375rem;
-  height: 6.125rem;
-  width: 24.45rem;
-  background-image: repeating-linear-gradient(
-      -10deg,
-      #cccccc,
-      #cccccc 8px,
-      transparent 8px,
-      transparent 16px,
-      #cccccc 16px
-    ),
-    repeating-linear-gradient(
-      80deg,
-      #cccccc,
-      #cccccc 8px,
-      transparent 8px,
-      transparent 16px,
-      #cccccc 16px
-    ),
-    repeating-linear-gradient(
-      170deg,
-      #cccccc,
-      #cccccc 8px,
-      transparent 8px,
-      transparent 16px,
-      #cccccc 16px
-    ),
-    repeating-linear-gradient(
-      260deg,
-      #cccccc,
-      #cccccc 8px,
-      transparent 8px,
-      transparent 16px,
-      #cccccc 16px
-    );
-  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
-  background-position: 0 0, 0 0, 100% 0, 0 100%;
-  background-repeat: no-repeat;
+body {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
-::ng-deep .ngx-file-drop__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#upload-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 400px;
+	height: 400px;
+	outline: 2px dashed #5d5d5d;
+	outline-offset: -12px;
+	background-color: #e0f2f7;
+	font-family: 'Segoe UI';
+	color: #1f3c44;
+}
 
-  .options {
-    color: black;
-    font-size: 0.75rem;
-  }
+#upload-container img {
+	width: 40%;
+	margin-bottom: 20px;
+	user-select: none;
+}
 
-  .icon {
-    background: none;
-    border: none;
-    color: gray;
-  }
+#upload-container label {
+	font-weight: bold;
+}
 
-  .upload-text {
-    color: var(--text-default);
-  }
+#upload-container label:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
 
-  .upload-button {
-    padding: 0;
-    background: none;
-    border: none;
-    color: blue;
-    cursor: pointer;
-    font-size: 0.75rem;
-  }
+#upload-container div {
+	position: relative;
+	z-index: 10;
+}
 
-  .file-format {
-    font-size: 0.75rem;
-    color: gray;
-  }
+#upload-container input[type=file] {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	position: absolute;
+	z-index: -10;
+}
+
+#upload-container label.focus {
+	outline: 1px solid #0078d7;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+#upload-container.dragover {
+	background-color: #fafafa;
+	outline-offset: -17px;
 }
