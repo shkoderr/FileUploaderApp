@@ -15,7 +15,16 @@ export class FileUploaderComponent {
 
   public files: any[] = [];
 
-  onFileChange(pFileList: File[]){
-    this.files = Array.from(pFileList);
+  public onFileChange(pFileList: File[]){
+    this.files.push(pFileList[0]);
+  }
+
+  public onInputFileChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files) {
+      for (let i = 0; i < inputElement.files.length; i++) {
+        this.files.push(inputElement.files[i]);
+      }
+    }
   }
 }
