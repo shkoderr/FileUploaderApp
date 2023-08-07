@@ -13,10 +13,7 @@ export class DragDropFileDirective {
   @Output() private filesChangeEmiter: EventEmitter<File[]> =
     new EventEmitter();
 
-  @HostBinding('style.background') private background = '#eee';
-  @HostBinding('style.border') private borderStyle = '2px dashed';
-  @HostBinding('style.border-color') private borderColor = '#696D7D';
-  @HostBinding('style.border-radius') private borderRadius = '5px';
+  @HostBinding('style.background') private background = '#ffffff';
 
   constructor() {}
 
@@ -25,16 +22,14 @@ export class DragDropFileDirective {
     event.preventDefault();
     event.stopPropagation();
     console.log('dragover');
-    this.background = 'lightgray';
-    this.borderColor = 'cadetblue';
+    this.background = '#f6f6f6';
   }
 
   @HostListener('dragleave', ['$event']) onDragLeave(event: DragEvent) {
     event.preventDefault();
     event.stopPropagation();
     console.log('dragleave');
-    this.background = '#eee';
-    this.borderColor = '#696D7D';
+    this.background = '#fff';
   }
 
   @HostListener('drop', ['$event'])
@@ -42,8 +37,7 @@ export class DragDropFileDirective {
     event.preventDefault();
     event.stopPropagation();
     console.log('drop');
-    this.background = '#eee';
-    this.borderColor = '#696D7D';
+    this.background = '#fff';
     const files = event.dataTransfer?.files;
 
     if (files) {
